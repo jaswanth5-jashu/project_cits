@@ -11,11 +11,9 @@ body{
 }
 
 header{
-    height:70px;
     background:#ffffff;
     display:flex;
-    align-items:center;
-    padding:0 100px;
+    padding:0 10px;
     box-shadow:0 2px 8px rgba(0,0,0,0.08);
     position:fixed;
     top:0;
@@ -27,11 +25,9 @@ header{
 
 .hero{
     min-height:100vh;
-    margin-top:70px;
     color:white;
     display:flex;
     flex-direction:column;
-    justify-content:space-between;
     background:
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Cpath d='M19 0h2v40h-2zM0 19h40v2H0z'/%3E%3C/g%3E%3C/svg%3E"),
     linear-gradient(135deg,#0a73d9,#12b3e6);
@@ -185,7 +181,7 @@ header{
 }
 
 .herotwo{
-    background:#f6f9fc;
+    background:#eaeaea;
     padding:100px 0;
     display:flex;
     flex-direction:column;
@@ -430,7 +426,7 @@ header{
     gap:24px;
 }
 
-.btn{
+.btn-pri,.btn-out{
     padding:16px 34px;
     border-radius:12px;
     font-weight:600;
@@ -441,21 +437,21 @@ header{
     transition:0.3s ease;
 }
 
-.pri{
+.btn-pri{
     background:white;
     color:#0a73d9;
 }
 
-.pri:hover{
+.btn-pri:hover{
     transform:translateY(-2px);
 }
 
-.out{
+.btn-out{
     border:2px solid white;
     color:white;
 }
 
-.out:hover{
+.btn-out:hover{
     background:white;
     color:#0a73d9;
 }
@@ -612,77 +608,218 @@ header{
 }
 
 /* Mobile Styles (max-width: 768px) */
-@media screen and (max-width: 768px) {
-    header {
-        padding: 0 20px;
-        justify-content: center;
-    }
-    
-    .hero-content {
-        padding: 0 20px;
-        align-items: center;
-        text-align: center;
-    }
-    
-    .hero h1 { font-size: 36px; }
-    .hero p { font-size: 16px; }
-    
-    .btns {
-        flex-direction: column;
-        width: 100%;
-        max-width: 300px;
-    }
-    
-    .stats {
-        grid-template-columns: 1fr 1fr;
-        padding: 30px 20px;
-        gap: 20px;
-    }
-    
-    .stat h2 { font-size: 28px; }
-    
-    .offer-title { font-size: 32px; }
-    
-    .twobox {
-        padding: 0 20px;
-    }
-    
-    .twobox1, .twobox2, .twobox3 {
-        width: 100%;
-        height: auto;
-    }
-    
-    .about-card {
-        width: 100%;
-        max-width: 340px;
-        height: 300px;
-    }
-    
-    .about-right h1 { font-size: 32px; }
-    
-    .cta {
-        padding: 80px 20px;
-    }
-    
-    .cta h1 { font-size: 32px; }
-    
-    .cta-btns {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .btn { width: 100%; max-width: 280px; justify-content: center; }
-    
-    .ft {
-        grid-template-columns: 1fr;
-        padding: 50px 20px;
-        text-align: center;
-        gap: 40px;
-    }
-    
-    .brand .logo, .soc {
-        justify-content: center;
-    }
-    
-    .txt { margin: 0 auto 24px; }
+/* =====================================================
+   LARGE LAPTOPS & SMALL DESKTOPS
+===================================================== */
+@media screen and (max-width: 1200px){
+  .hero-content{
+    padding: 0 60px;
+  }
+
+  .stats{
+    padding: 30px 60px;
+  }
+
+  .about-section{
+    padding: 100px 60px;
+    gap: 60px;
+  }
+
+  .cta{
+    padding: 120px 60px;
+  }
+
+  .ft{
+    padding: 80px 60px;
+    gap: 50px;
+  }
+}
+
+/* =====================================================
+   TABLETS (iPad etc)
+===================================================== */
+@media screen and (max-width: 1024px){
+  .hero h1{
+    font-size: 48px;
+  }
+
+  .hero-content{
+    padding: 0 40px;
+  }
+
+  .stats{
+    grid-template-columns: repeat(2,1fr);
+    gap: 30px;
+    padding: 30px 40px;
+  }
+
+  .about-section{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-right .desc{
+    margin: 0 auto 28px;
+  }
+
+  .about-right .points{
+    display: inline-block;
+    text-align: left;
+  }
+
+  .cta h1{
+    font-size: 44px;
+  }
+
+  .ft{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* =====================================================
+   MOBILE (large phones)
+===================================================== */
+@media screen and (max-width: 768px){
+  header{
+    padding: 0 20px;
+  }
+
+  .hero{
+    text-align: center;
+  }
+
+  .hero-content{
+    padding: 0 20px;
+    align-items: center;
+  }
+
+  .hero h1{
+    font-size: 34px;
+    line-height: 1.2;
+  }
+
+  .hero p{
+    font-size: 16px;
+  }
+
+  .btns{
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .stats{
+    padding: 30px 20px;
+    gap: 20px;
+  }
+
+  .stat h2{
+    font-size: 28px;
+  }
+
+  .offer-title{
+    font-size: 32px;
+  }
+
+  .twobox{
+    padding: 0 20px;
+  }
+
+  .twobox1,
+  .twobox2,
+  .twobox3{
+    width: 100%;
+    height: auto;
+  }
+
+  .about-card{
+    width: 100%;
+    max-width: 340px;
+    height: 300px;
+  }
+
+  .about-right h1{
+    font-size: 32px;
+  }
+
+  .cta{
+    padding: 80px 20px;
+  }
+
+  .cta h1{
+    font-size: 32px;
+  }
+
+  .cta-btns{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ft{
+    grid-template-columns: 1fr;
+    padding: 50px 20px;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .soc,
+  .brand .logo{
+    justify-content: center;
+  }
+
+  .txt{
+    margin: 0 auto 24px;
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE (very small screens)
+===================================================== */
+@media screen and (max-width: 480px){
+  .hero h1{
+    font-size: 28px;
+  }
+
+  .offer-title{
+    font-size: 26px;
+  }
+
+  .cta h1{
+    font-size: 26px;
+  }
+
+  .copyright{
+    font-size: 12px;
+  }
+}
+
+
+/* ================= COPYRIGHT ================= */
+.copyright{
+  text-align: center;
+  font-size: 14px;
+  color: #000000;
+  padding-bottom: 25px;
+  letter-spacing: 0.3px;
+  margin-top: 20px;
+  
+}
+
+/* Optional highlight */
+.copyright span{
+  color: #1e88ff;
+
+  font-weight: 500;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px){
+  .ft-hr{
+    margin: 30px 20px 15px;
+  }
+
+  .copyright{
+    font-size: 13px;
+    padding-bottom: 20px;
+  }
 }

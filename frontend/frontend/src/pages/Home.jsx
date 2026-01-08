@@ -4,9 +4,6 @@ import { NavLink } from "react-router-dom";
 function Home(){
     return (
         <div>
-            <header>
-                Akhils's Cloud Technology platform LLP
-            </header>
             <div className="hero">
                 <div className="hero-content">
                     <div className="trusted">
@@ -38,21 +35,21 @@ function Home(){
                 <div className="stats">
                     <div className="stat">
                         <h2>500+</h2>
-                        <p>Clients Served</p>
+                        <p> Clients Served</p>
 
                     </div>
                     <div className="stat">
                         <h2>15+</h2>
-                        <p>Years Experience</p>
+                        <p> Years Experience</p>
 
                     </div>
                     <div className="stat">
                         <h2>98%</h2>
-                        <p>Client Satisfaction</p>
+                        <p> Client Satisfaction</p>
                     </div>
                     <div className="stat">
                         <h2>50+</h2>
-                        <p>Tech Experts</p>
+                        <p> Tech Experts</p>
 
                     </div>
                     </div>
@@ -135,10 +132,10 @@ function Home(){
 
                     </p>
                     <ul className="points">
-                        <li><i className="bi bi-check-circle-fill">15+ years of industry expertise</i></li>
-                        <li><i className="bi bi-check-circle-fill">ISO certified processes</i></li>
-                        <li><i className="bi bi-check-circle-fill"> 24/7 dedicated support</i></li>
-                        <li><i className="bi bi-check-circle-fill"> Agile delivery methodology</i></li>
+                        <li><i className="bi bi-check-circle-fill"></i>15+ years of industry expertise</li>
+                        <li><i className="bi bi-check-circle-fill"></i>ISO certified processes</li>
+                        <li><i className="bi bi-check-circle-fill"></i>24/7 dedicated support</li>
+                        <li><i className="bi bi-check-circle-fill"></i>Agile delivery methodology</li>
                     </ul>
                     <NavLink className='about-btn' to='/about'>
                         Learn More About Us <span>➜</span>
@@ -195,13 +192,19 @@ function Home(){
                 </div>
                 <div className="col">
                     <h4>Contact</h4>
-                    <p><i className="bi bi-geo-alt">t-hub, near by T-Hub, Silpa Gram Village,<br/>Madhapur, Hyderabad<br/>Rai Durg, Telangana 500032</i></p>
-                    <p><i className="bi bi-telephone"> +1 (234) 567-890</i></p>
-                    <p><i className="bi bi-envelope">hr.team@cloudtechnologies.org.in</i></p>
+                    <p><i className="bi bi-geo-alt"></i>t-hub, near by T-Hub, Silpa Gram Village,<br/>Madhapur, Hyderabad<br/>Rai Durg, Telangana 500032</p>
+                    <p><i className="bi bi-telephone"></i> +1 (234) 567-890</p>
+                    <p><i className="bi bi-envelope"></i>hr.team@cloudtechnologies.org.in</p>
 
                 </div>
 
             </footer>
+            <hr className="ft-hr" />
+
+            <div className="copyright">
+            © {new Date().getFullYear()} Akhil Cloud Technology Platform LLP. 
+            All Rights Reserved.
+            </div>
         </div>
 
     );
