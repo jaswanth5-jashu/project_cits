@@ -1,46 +1,78 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+               'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+               'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Header */
 .header{
-    position: sticky;
-    top: 0;
-    background: #e0e3e3a1;
-    z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-
-
+  position: sticky;
+  height: 4vw;
+  top: 0;
+  background: #ffffff;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
+
+/* Container */
 .container{
-    max-width: 1200px;
-    margin: auto;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+/* Company name / logo */
 .c-name{
-    font-size: 22px;
-    color: #2bbc1d;
-    }
-.nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #1f2933;
-  
-  position: relative;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e88ff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
-.nav a::after {
+
+/* Nav links */
+.nav{
+  display: flex;
+  align-items: center;
+}
+
+.nav a{
+  margin-left: 22px;
+  text-decoration: none;
+  color: #444;
+  font-size: 15px;
+  font-weight: 500;
+  position: relative;
+  padding: 6px 0;
+  transition: color 0.3s ease;
+}
+
+/* Hover + active color */
+.nav a:hover,
+.nav a.active{
+  color: #1e88ff;
+}
+
+/* Underline animation */
+.nav a::after{
   content: "";
   position: absolute;
   left: 0;
-  bottom: -5px;
+  bottom: 0;
   width: 0;
   height: 2px;
-  background: #b9156f;
-  transition: 0.3s;
-}
-.nav a:hover::after,
-.nav a.active::after {
-  width: 100%;
-}
-.nav a.active {
-  color: #0047ab;
+  background: #1e88ff;
+  transition: width 0.3s ease;
 }
 
+.nav a:hover::after,
+.nav a.active::after{
+  width: 100%;
+}

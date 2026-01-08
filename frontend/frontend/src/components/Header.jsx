@@ -5,7 +5,7 @@ function Header() {
     <header className="header">
       <div className="container">
         <div className="logo">
-          <p className="c-name">CITS R&D UNIT</p>
+          <p className="c-name">Akhils's Cloud Technology platform LLP</p>
         </div>
         <div className="nav">
           <NavLink to="/">Home</NavLink>
