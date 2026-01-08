@@ -1,0 +1,46 @@
+.header{
+    position: sticky;
+    top: 0;
+    background: #e0e3e3a1;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+
+
+}
+.container{
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.c-name{
+    font-size: 22px;
+    color: #2bbc1d;
+    }
+.nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #1f2933;
+  
+  position: relative;
+}
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: #b9156f;
+  transition: 0.3s;
+}
+.nav a:hover::after,
+.nav a.active::after {
+  width: 100%;
+}
+.nav a.active {
+  color: #0047ab;
+}
+
