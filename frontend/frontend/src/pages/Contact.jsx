@@ -1,11 +1,10 @@
-
 import React from "react";
-import "../css/contact.css"; // Your CSS file
+import "../css/contact.css";
 
 
 function Contact() {
   return (
-    <div className="contact-page">
+    <div className="cont-page">
       {/* HERO SECTION */}
       <section className="hero-contact">
         <div className="hero-con">
@@ -26,7 +25,7 @@ function Contact() {
           </p>
 
           <div className="contact-grid">
-            {/* LEFT: Contact Info */}
+            {/* LEFT : CONTACT INFO */}
             <div className="contact-info">
               <div className="info-card">
                 <i className="bi bi-envelope"></i>
@@ -61,7 +60,7 @@ function Contact() {
               </div>
             </div>
 
-            {/* RIGHT: Contact Form */}
+            {/* RIGHT : CONTACT FORM */}
             <div className="contact-form">
               <form>
                 <div className="form-group">
@@ -89,7 +88,7 @@ function Contact() {
         </div>
       </section>
 
-      {/* HEADQUARTERS INFO */}
+      {/* HEADQUARTERS */}
       <div className="info-card headquarters">
         <i className="bi bi-building"></i>
         <div>
@@ -101,6 +100,7 @@ function Contact() {
             <br />
             Telangana – 500081
           </p>
+
           <a
             href="https://www.google.com/maps?q=Hitech+City+Hyderabad"
             target="_blank"

@@ -1,13 +1,10 @@
 import { NavLink } from "react-router-dom";
 import '../css/services.css'
 
-function Services() {
+const Services = () => {
   return (
-    <>
     <div className="services-page">
-
-    
-      {/* ================= HERO ================= */}
+      {/* HERO */}
       <section className="hero">
         <div className="hero-c">
           <h1>Our Services</h1>
@@ -18,7 +15,7 @@ function Services() {
         </div>
       </section>
 
-      {/* ================= SERVICES GRID ================= */}
+      {/* SERVICES */}
       <section className="svc">
         <div className="wrap">
           <div className="head">
@@ -31,64 +28,167 @@ function Services() {
           </div>
 
           <div className="grid">
-            <NavLink to="/cloud" className="card">
-              <div className="ico"><i className="bi bi-cloud"></i></div>
+            <a href="#cloud" className="card">
+              <div className="ico">
+                <i className="bi bi-cloud"></i>
+              </div>
               <h3>Cloud Solutions</h3>
               <p>Scalable cloud infrastructure and migration services.</p>
-            </NavLink>
+            </a>
 
-            <NavLink to="/infra" className="card">
-              <div className="ico"><i className="bi bi-hdd-network"></i></div>
+            <a href="#infra" className="card">
+              <div className="ico">
+                <i className="bi bi-hdd-network"></i>
+              </div>
               <h3>IT Infrastructure</h3>
               <p>Enterprise-grade infrastructure management and support.</p>
-            </NavLink>
+            </a>
 
-            <NavLink to="/security" className="card">
-              <div className="ico"><i className="bi bi-shield-check"></i></div>
+            <a href="#security" className="card">
+              <div className="ico">
+                <i className="bi bi-shield-check"></i>
+              </div>
               <h3>Cybersecurity</h3>
               <p>Comprehensive security solutions to protect your assets.</p>
-            </NavLink>
+            </a>
 
-            <NavLink to="/software" className="card">
-              <div className="ico"><i className="bi bi-code-slash"></i></div>
+            <a href="#software" className="card">
+              <div className="ico">
+                <i className="bi bi-code-slash"></i>
+              </div>
               <h3>Software Development</h3>
               <p>Custom software solutions tailored to your business.</p>
-            </NavLink>
+            </a>
 
-            <NavLink to="/data" className="card">
-              <div className="ico"><i className="bi bi-database"></i></div>
+            <a href="#data" className="card">
+              <div className="ico">
+                <i className="bi bi-database"></i>
+              </div>
               <h3>Data Analytics</h3>
               <p>Turn your data into actionable business insights.</p>
-            </NavLink>
+            </a>
 
-            <NavLink to="/digital" className="card">
-              <div className="ico"><i className="bi bi-graph-up"></i></div>
+            <a href="#digital" className="card">
+              <div className="ico">
+                <i className="bi bi-graph-up"></i>
+              </div>
               <h3>Digital Transformation</h3>
               <p>End-to-end digital transformation strategies.</p>
-            </NavLink>
+            </a>
 
-            <NavLink to="/mobile" className="card">
-              <div className="ico"><i className="bi bi-phone"></i></div>
+            <a href="#mobile" className="card">
+              <div className="ico">
+                <i className="bi bi-phone"></i>
+              </div>
               <h3>Mobile Solutions</h3>
               <p>Native and cross-platform mobile applications.</p>
-            </NavLink>
+            </a>
 
-            <NavLink to="/support" className="card">
-              <div className="ico"><i className="bi bi-headset"></i></div>
+            <a href="#support" className="card">
+              <div className="ico">
+                <i className="bi bi-headset"></i>
+              </div>
               <h3>IT Support</h3>
               <p>24/7 technical support and managed services.</p>
-            </NavLink>
+            </a>
           </div>
         </div>
       </section>
 
-      {/* ================= ADVANTAGE ================= */}
+      {/* MODALS */}
+
+      {/* CLOUD */}
+      <div id="cloud" className="modal">
+        <div className="modal-box">
+          <a href="#" className="close">
+            &times;
+          </a>
+          <div className="m-head">
+            <div className="ico big">
+              <i className="bi bi-cloud"></i>
+            </div>
+            <h3>Cloud Solutions</h3>
+          </div>
+          <p className="m-text">
+            Secure, scalable, and cost-effective cloud services to modernize your
+            infrastructure.
+          </p>
+          <ul className="features">
+            <li>Cloud Migration</li>
+            <li>AWS / Azure / GCP</li>
+            <li>Hybrid Cloud</li>
+            <li>Cloud Security</li>
+          </ul>
+          <a href="contact.html" className="btn">
+            Get a Quote
+          </a>
+        </div>
+      </div>
+
+      {/* IT INFRA */}
+      <div id="infra" className="modal">
+        <div className="modal-box">
+          <a href="#" className="close">
+            &times;
+          </a>
+          <div className="m-head">
+            <div className="ico big">
+              <i className="bi bi-hdd-network"></i>
+            </div>
+            <h3>IT Infrastructure</h3>
+          </div>
+          <p className="m-text">
+            Reliable IT infrastructure services ensuring performance,
+            scalability, and uptime.
+          </p>
+          <ul className="features">
+            <li>Network Management</li>
+            <li>Server Setup</li>
+            <li>Virtualization</li>
+            <li>Disaster Recovery</li>
+          </ul>
+          <a href="contact.html" className="btn">
+            Get a Quote
+          </a>
+        </div>
+      </div>
+
+      {/* SECURITY */}
+      <div id="security" className="modal">
+        <div className="modal-box">
+          <a href="#" className="close">
+            &times;
+          </a>
+          <div className="m-head">
+            <div className="ico big">
+              <i className="bi bi-shield-check"></i>
+            </div>
+            <h3>Cybersecurity</h3>
+          </div>
+          <p className="m-text">
+            Advanced security solutions to protect systems, networks, and data.
+          </p>
+          <ul className="features">
+            <li>Threat Detection</li>
+            <li>Firewall Management</li>
+            <li>Vulnerability Assessment</li>
+            <li>Compliance Security</li>
+          </ul>
+          <a href="contact.html" className="btn">
+            Get a Quote
+          </a>
+        </div>
+      </div>
+
+      {/* ADVANTAGE */}
       <section className="advantage">
         <div className="adv-wrap">
           <span className="adv-tag">Why Choose Us</span>
+
           <h2 className="adv-title">
             The Akhil’s Cloud Technology Platform LLP Advantage
           </h2>
+
           <p className="adv-sub">
             Empowering businesses with scalable cloud solutions, secure
             infrastructure, and reliable technology partnerships.
@@ -99,7 +199,8 @@ function Services() {
               <div className="adv-num">1</div>
               <h3>Cloud-First Expertise</h3>
               <p>
-                Deep expertise in cloud architecture, migration, and optimization.
+                Deep expertise in cloud architecture, migration, and optimization
+                across modern platforms.
               </p>
             </div>
 
@@ -107,7 +208,8 @@ function Services() {
               <div className="adv-num">2</div>
               <h3>Proven Delivery Model</h3>
               <p>
-                Structured processes ensuring consistent, high-quality delivery.
+                Structured processes and best practices ensuring consistent,
+                high-quality project delivery.
               </p>
             </div>
 
@@ -115,15 +217,15 @@ function Services() {
               <div className="adv-num">3</div>
               <h3>24/7 Technical Support</h3>
               <p>
-                Always-on monitoring and expert support.
+                Always-on monitoring and expert support to keep your systems
+                secure and running smoothly.
               </p>
             </div>
           </div>
         </div>
       </section>
-      </div>
-    </>
+    </div>
   );
-}
+};
 
 export default Services;
