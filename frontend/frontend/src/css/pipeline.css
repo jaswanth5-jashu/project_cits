@@ -1,0 +1,201 @@
+/* ================= RESET ================= */
+.pipeline-page * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.pipeline-page {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #ffffff;
+  color: #101828;
+}
+
+/* ================= HEADER ================= */
+/* ================= HEADER ================= */
+.pipeline-page .pipeline-header {
+  text-align: center;
+  padding: 70px 20px 60px; /* top-bottom padding */
+  background: linear-gradient(135deg, #33befa, #29acd8, #3bb3e7); /* added gradient */
+  color: #ffffff; /* ensure text is visible */
+  border-radius: 0 0 20px 20px; /* optional rounded bottom */
+}
+
+.pipeline-page .pipeline-header h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: #ffffff; /* header text color */
+}
+
+.pipeline-page .pipeline-header p {
+  max-width: 720px;
+  margin: auto;
+  font-size: 18px;
+  color: #e0e0e0; /* lighter for contrast on dark background */
+  line-height: 1.6;
+}
+
+
+/* ================= SECTIONS ================= */
+.pipeline-page .pipeline-section {
+  padding: 70px 20px;
+}
+
+.pipeline-page .active-section {
+  background: #f0fdf4;
+}
+
+.pipeline-page .upcoming-section {
+  background: #fff7ed;
+}
+
+.pipeline-page .completed-section {
+  background: #f1f5f9;
+}
+
+.pipeline-page .section-title {
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.pipeline-page .section-sub {
+  font-size: 19px;
+  color: #667085;
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+/* ================= GRID ================= */
+.pipeline-page .project-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+/* ================= CARD ================= */
+.pipeline-page .project-card {
+  padding: 28px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 12px 32px rgba(16, 24, 40, 0.14); /* lighter */
+  transition: 0.3s ease;
+}
+
+.pipeline-page .project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(16, 24, 40, 0.22);
+}
+
+/* ================= CARD TOP ================= */
+.pipeline-page .card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.pipeline-page .card-top h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* ================= BADGES ================= */
+.pipeline-page .badge {
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.pipeline-page .badge.active {
+  background: #bbf7d0;
+  color: #166534;
+}
+
+.pipeline-page .badge.upcoming {
+  background: #fed7aa;
+  color: #9a3412;
+}
+
+.pipeline-page .badge.completed {
+  background: #bfdbfe;
+  color: #1e40af;
+}
+
+/* ================= TEXT ================= */
+.pipeline-page .client {
+  font-size: 14px;
+  color: #475467;
+}
+
+.pipeline-page .desc {
+  margin: 14px 0;
+  font-size: 15px;
+  color: #334155;
+  line-height: 1.6;
+}
+
+.pipeline-page .date {
+  font-size: 14px;
+  color: #475467;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ================= PROGRESS ================= */
+.pipeline-page .progress-box {
+  margin: 18px 0;
+}
+
+.pipeline-page .progress-text {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.pipeline-page .progress-bar {
+  height: 9px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.pipeline-page .progress-bar span {
+  display: block;
+  height: 100%;
+  width: var(--progress); /* React inline style compatible */
+  background: #22c55e;
+  animation: fill 1.1s ease;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fill {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--progress);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .pipeline-page .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pipeline-page .pipeline-header h1 {
+    font-size: 32px;
+  }
+
+  .pipeline-page .section-title {
+    font-size: 28px;
+  }
+}

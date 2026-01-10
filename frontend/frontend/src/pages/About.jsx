@@ -1,10 +1,12 @@
+
 import "../css/About.css";
+
 function About() {
   return (
     <div className="about-page">
       <section className="hero">
         <div className="hero-c">
-          <h1>About NovaTech</h1>
+          <h1>Akhil Cloud Tecnologies Plarfrom LLP</h1>
           <p>
             Building tomorrow's technology solutions today. Learn about our{" "}
             <br />
@@ -25,7 +27,7 @@ function About() {
           </h2>
 
           <p>
-            NovaTech Solutions was founded with a simple yet ambitious vision:
+            Akhil Cloud Tecnologies Plarfrom LLP Solutions was founded with a simple yet ambitious vision:
             to help businesses harness the power of technology to achieve
             extraordinary growth and efficiency.
           </p>
