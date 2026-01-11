@@ -1,17 +1,17 @@
 /* RESET */
-*{
+.gallery-page *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-body{
+.gallery-page {
     font-family:system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     overflow-x:hidden;
 }
 
 /* HERO */
-.hero-gallery{
+.gallery-page .hero-gallery{
     min-height:40vh;
     display:flex;
     align-items:center;
@@ -25,32 +25,32 @@ body{
     background-size:40px 40px,cover;
 }
 
-.gallery-hero-c{
+.gallery-page .gallery-hero-c{
     max-width:900px;
     padding:0 20px;
     animation:fadeUp 0.9s ease forwards;
 }
 
-.gallery-hero-c h1{
+.gallery-page .gallery-hero-c h1{
     font-size:50px;
     margin-bottom:10px;
     font-weight: 700;
 }
 
-.gallery-hero-c p{
+.gallery-page .gallery-hero-c p{
     font-size:18px;
     line-height:1.6;
     opacity:0.95;
 }
 
-.gallery-section{
+.gallery-page .gallery-section{
   padding:60px 20px;
   max-width:1200px;
   margin:auto;
 }
 
 
-.filters{
+.gallery-page .filters{
   display:flex;
   justify-content:center;
   gap:12px;
@@ -58,7 +58,7 @@ body{
   flex-wrap:wrap;
 }
 
-.filter-btn{
+.gallery-page .filter-btn{
   padding:10px 18px;
   border:none;
   border-radius:20px;
@@ -66,18 +66,18 @@ body{
   cursor:pointer;
 }
 
-.filter-btn.active{
+.gallery-page .filter-btn.active{
   background:#2563eb;
   color:white;
 }
 
-.gallery-grid{
+.gallery-page .gallery-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
   gap:20px;
 }
 
-.gallery-card{
+.gallery-page .gallery-card{
   border-radius:14px;
   overflow:hidden;
   cursor:pointer;
@@ -85,27 +85,27 @@ body{
   box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
-.gallery-card img{
+.gallery-page .gallery-card img{
   width:100%;
   height:180px;
   object-fit:cover;
 }
 
-.gallery-info{
+.gallery-page .gallery-info{
   padding:12px;
 }
 
-.gallery-info h4{
+.gallery-page .gallery-info h4{
   font-size:16px;
 }
 
-.gallery-info span{
+.gallery-page .gallery-info span{
   font-size:13px;
   color:#6b7280;
 }
 
 /* MODAL */
-.modal{
+.gallery-page .modal{
   position:fixed;
   inset:0;
   background:rgba(0,0,0,0.75);
@@ -116,22 +116,22 @@ body{
   padding:20px;
 }
 
-.modal img{
+.gallery-page .modal img{
   max-width:90%;
   max-height:70vh;
   border-radius:14px;
   margin-bottom:20px;
 }
 
-.modal h3{
+.gallery-page .modal h3{
   color:white;
 }
 
-.modal p{
+.gallery-page .modal p{
   color:#d1d5db;
 }
 
-.close-btn{
+.gallery-page .close-btn{
   position:absolute;
   top:20px;
   right:30px;

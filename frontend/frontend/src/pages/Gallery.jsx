@@ -10,7 +10,7 @@ function Gallery() {
   }, []);
 
   return (
-    <>
+    <div className="gallery-page">
       {/* HERO */}
       <section className="hero-gallery">
         <div className="gallery-hero-c">
@@ -48,7 +48,7 @@ function Gallery() {
         <h3 id="modalTitle"></h3>
         <p id="modalCategory"></p>
       </div>
-    </>
+    </div>
   );
 }
 

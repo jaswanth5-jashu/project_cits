@@ -168,7 +168,6 @@
   cursor: pointer;
   font-size: 14px;
   transition: .2s ease;
-  display: inline-block;
 }
 
 .mous-page .filter-btn.active {
