@@ -4,7 +4,7 @@ import Career from "../pages/Carrer";
 import Contact from "../pages/Contact"
 import Gallery from "../pages/Gallery";
 import Mous from "../pages/Mous";
-import Pipeline from "../pages/Pipeline.Jsx";
+import Pipeline from "../pages/Pipeline.jsx";
 import Home from "../pages/Home";
 import Services from "../pages/Services";
 import { Route,Routes } from "react-router-dom";

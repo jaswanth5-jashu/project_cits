@@ -119,9 +119,9 @@ const Services = () => {
             <li>Hybrid Cloud</li>
             <li>Cloud Security</li>
           </ul>
-          <a href="contact.html" className="btn">
+        <NavLink to="/contact" className="btn">
             Get a Quote
-          </a>
+        </NavLink>
         </div>
       </div>
 
@@ -147,9 +147,9 @@ const Services = () => {
             <li>Virtualization</li>
             <li>Disaster Recovery</li>
           </ul>
-          <a href="contact.html" className="btn">
+        <NavLink to="/contact" className="btn">
             Get a Quote
-          </a>
+        </NavLink>
         </div>
       </div>
 
@@ -174,9 +174,9 @@ const Services = () => {
             <li>Vulnerability Assessment</li>
             <li>Compliance Security</li>
           </ul>
-          <a href="contact.html" className="btn">
-            Get a Quote
-          </a>
+       <NavLink to="/contact" className="btn">
+          Get a Quote
+      </NavLink>
         </div>
       </div>
 

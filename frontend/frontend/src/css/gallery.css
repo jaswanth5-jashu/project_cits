@@ -1,0 +1,141 @@
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x:hidden;
+}
+
+/* HERO */
+.hero-gallery{
+    min-height:40vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Cpath d='M19 0h2v40h-2zM0 19h40v2H0z'/%3E%3C/g%3E%3C/svg%3E"),
+    linear-gradient(135deg,#0a73d9,#12b3e6);
+    background-repeat:repeat,no-repeat;
+    background-size:40px 40px,cover;
+}
+
+.gallery-hero-c{
+    max-width:900px;
+    padding:0 20px;
+    animation:fadeUp 0.9s ease forwards;
+}
+
+.gallery-hero-c h1{
+    font-size:50px;
+    margin-bottom:10px;
+    font-weight: 700;
+}
+
+.gallery-hero-c p{
+    font-size:18px;
+    line-height:1.6;
+    opacity:0.95;
+}
+
+.gallery-section{
+  padding:60px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+
+
+.filters{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-bottom:40px;
+  flex-wrap:wrap;
+}
+
+.filter-btn{
+  padding:10px 18px;
+  border:none;
+  border-radius:20px;
+  background:#e5e7eb;
+  cursor:pointer;
+}
+
+.filter-btn.active{
+  background:#2563eb;
+  color:white;
+}
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
+}
+
+.gallery-card{
+  border-radius:14px;
+  overflow:hidden;
+  cursor:pointer;
+  background:white;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.gallery-card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+
+.gallery-info{
+  padding:12px;
+}
+
+.gallery-info h4{
+  font-size:16px;
+}
+
+.gallery-info span{
+  font-size:13px;
+  color:#6b7280;
+}
+
+/* MODAL */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.75);
+  display:none;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.modal img{
+  max-width:90%;
+  max-height:70vh;
+  border-radius:14px;
+  margin-bottom:20px;
+}
+
+.modal h3{
+  color:white;
+}
+
+.modal p{
+  color:#d1d5db;
+}
+
+.close-btn{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:34px;
+  color:white;
+  cursor:pointer;
+}
