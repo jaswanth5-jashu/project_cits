@@ -1,5 +1,8 @@
+import React, { useState, useEffect } from "react"; // <--- Ikkada useState, useEffect add chesa
 import "../css/Home.css";
 import { NavLink } from "react-router-dom";
+import AnimatedNumber from "../components/AnimatedNumbers.jsx";
+
 function Home() {
   return (
     <div>
@@ -26,25 +29,25 @@ function Home() {
               <span className="arrow">➜</span>
             </NavLink>
             <NavLink to="/career" className="btn-outline">
-              Explore Carreers
+              Explore Careers
             </NavLink>
           </div>
         </div>
         <div className="stats">
           <div className="stat">
-            <h2>500+</h2>
+            <h2><AnimatedNumber end={500} />+</h2>
             <p> Clients Served</p>
           </div>
           <div className="stat">
-            <h2>15+</h2>
+            <h2><AnimatedNumber end={15} />+</h2>
             <p> Years Experience</p>
           </div>
           <div className="stat">
-            <h2>98%</h2>
+            <h2><AnimatedNumber end={98} />%</h2>
             <p> Client Satisfaction</p>
           </div>
           <div className="stat">
-            <h2>50+</h2>
+            <h2><AnimatedNumber end={50} />+</h2>
             <p> Tech Experts</p>
           </div>
         </div>
@@ -52,6 +55,8 @@ function Home() {
           <span>⌄</span>
         </div>
       </div>
+      
+      {/* --- Baaki sections (herotwo, about, cta) same untayi --- */}
       <section className="herotwo">
         <div className="offer-wrap">
           <div className="offer-pill">What We Offer</div>
@@ -91,6 +96,7 @@ function Home() {
           </div>
         </div>
       </section>
+
       <section className="about-section">
         <div className="about-left">
           <div className="about-card">
@@ -138,6 +144,7 @@ function Home() {
           </NavLink>
         </div>
       </section>
+
       <section className="cta">
         <h1>Ready to Transform Your Business?</h1>
         <p>
@@ -156,4 +163,5 @@ function Home() {
     </div>
   );
 }
+
 export default Home;

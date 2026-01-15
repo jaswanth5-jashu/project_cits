@@ -100,10 +100,21 @@
   text-align: center;
 }
 
+/* --- Stats Numbers Fix --- */
 .mous-page .hero-stats strong {
-  font-size: 42px;
+  font-size: 56px; /* Ikkada size penchanu */
+  font-weight: 800;
   display: block;
   margin-bottom: 6px;
+  color: #ffffff;
+}
+
+/* Deeni valla AnimatedNumber (span) pedda ga avthundi */
+.mous-page .hero-stats strong span {
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  display: inline-block;
 }
 
 .mous-page .hero-stats span {
@@ -261,6 +272,11 @@
   align-items: center;
   justify-content: center;
   z-index: 999;
+    pointer-events: auto;
+}
+
+.mous-page .modal-overlay.show {
+  display: flex;
 }
 
 .mous-page .modal {
@@ -271,6 +287,12 @@
   padding: 30px;
   position: relative;
   animation: scaleIn .25s ease;
+    pointer-events: auto;
+}
+
+.mous-page .modal-actions a {
+  position: relative;
+  z-index: 10;
 }
 
 .mous-page .close-btn {
@@ -284,6 +306,24 @@
   border-radius: 50%;
   font-size: 20px;
   cursor: pointer;
+}
+
+.mous-page .card p {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+/* FIX TEXT OVERFLOW IN MODAL DESCRIPTION */
+.mous-page #modalDesc {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.mous-page .modal ul li {
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 /* ================= MODAL HEADER ================= */
@@ -310,7 +350,6 @@
   color:#0d6efd;
 }
 
-/* TAG */
 .mous-page .modal-tag{
   background:#e8f1ff;
   color:#0d6efd;
@@ -344,7 +383,6 @@
   font-weight:600;
 }
 
-/* DESCRIPTION */
 .mous-page #modalDesc{
   font-size:15px;
   line-height:1.6;
@@ -365,7 +403,6 @@
   position:relative;
 }
 
-/* Optional subtle bullet */
 .mous-page .modal ul li::marker{
   color:#0d6efd;
 }
@@ -386,11 +423,9 @@
   margin-top:24px;
 }
 
-/* Buttons already defined – just enhance */
 .mous-page .modal-actions .btn{
   font-weight:500;
 }
-
 
 .mous-page .btn {
   padding: 12px 18px;
@@ -407,7 +442,6 @@
   background-color: #0d6efd;
   color: #fff;
 }
-
 
 .mous-page .btn.blue:hover {
   background-color: #fdfeff;
@@ -492,7 +526,6 @@
 
 /* ================= MEDIA TAGS (RESPONSIVE) ================= */
 
-/* Tablet & Smaller Laptops */
 @media (max-width: 1024px) {
   .mous-page .hero h1 {
     font-size: 48px;
@@ -502,7 +535,6 @@
   }
 }
 
-/* Mobile Devices */
 @media (max-width: 768px) {
   .mous-page .hero h1 {
     font-size: 38px;
@@ -523,11 +555,10 @@
   }
   
   .mous-page .hero-stats strong {
-    font-size: 34px;
+    font-size: 48px; /* Mobile lo kuda penchanu */
   }
 }
 
-/* Small Mobile Devices */
 @media (max-width: 480px) {
   .mous-page .hero h1 {
     font-size: 30px;

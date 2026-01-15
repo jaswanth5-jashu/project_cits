@@ -1,53 +1,105 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "../css/gallery.css";
-import { rungallery } from "../js/gallery";
-import { NavLink } from "react-router-dom";
 
 function Gallery() {
+  const [images, setImages] = useState([]);
+  const [categories, setCategories] = useState(["All"]);
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [selectedImage, setSelectedImage] = useState(null);
 
+  // 🔹 Fetch gallery images from backend
   useEffect(() => {
-    rungallery();
+    fetch("http://127.0.0.1:8000/api/gallery/")
+      .then((res) => res.json())
+      .then((data) => {
+        setImages(data);
+
+        // 🔹 Extract unique categories dynamically
+        const uniqueCategories = [
+          "All",
+          ...new Set(data.map((item) => item.category)),
+        ];
+        setCategories(uniqueCategories);
+      })
+      .catch((err) => console.error("Gallery API error:", err));
   }, []);
+
+  // 🔹 Filter images based on category
+  const filteredImages =
+    activeCategory === "All"
+      ? images
+      : images.filter((img) => img.category === activeCategory);
 
   return (
     <div className="gallery-page">
-      {/* HERO */}
+      {/* ================= HERO ================= */}
       <section className="hero-gallery">
         <div className="gallery-hero-c">
           <h1>Our Gallery</h1>
           <p>
-            Explore our journey through images — from events and activities to
-            <br />
-            achievements and our vibrant workspace.
+            Explore our journey through images — from events, activities,
+            achievements, and our workspace.
           </p>
         </div>
       </section>
 
-      {/* GALLERY SECTION */}
+      {/* ================= FILTERS ================= */}
       <section className="gallery-section">
         <div className="filters">
-          <button className="filter-btn active" data-category="All">All</button>
-          <button className="filter-btn" data-category="Events">Events</button>
-          <button className="filter-btn" data-category="Activities">Activities</button>
-          <button className="filter-btn" data-category="Achievements">Achievements</button>
-          <button className="filter-btn" data-category="Office">Office</button>
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              className={`filter-btn ${
+                activeCategory === cat ? "active" : ""
+              }`}
+              onClick={() => setActiveCategory(cat)}
+            >
+              {cat}
+            </button>
+          ))}
         </div>
 
-        <div className="gallery-grid" id="galleryGrid"></div>
+        {/* ================= GALLERY GRID ================= */}
+        <div className="gallery-grid">
+          {filteredImages.map((item) => (
+            <div
+              key={item.id}
+              className="gallery-card"
+              onClick={() => setSelectedImage(item)}
+            >
+              <img src={item.image} alt={item.title} />
+              <div className="gallery-info">
+                <h4>{item.title}</h4>
+                <span>{item.category}</span>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
 
-      {/* IMAGE MODAL */}
-      <div className="modal" id="imageModal">
-        <span
-        className="close-btn"
-        onClick={() => window.closeGalleryModal()}
+      {/* ================= MODAL ================= */}
+      {selectedImage && (
+        <div
+          className="modal"
+          onClick={() => setSelectedImage(null)}
         >
-        &times;
-        </span>
-        <img id="modalImage" alt="" />
-        <h3 id="modalTitle"></h3>
-        <p id="modalCategory"></p>
-      </div>
+          <span
+            className="close-btn"
+            onClick={() => setSelectedImage(null)}
+          >
+            &times;
+          </span>
+
+          <img
+            src={selectedImage.image}
+            alt={selectedImage.title}
+            onClick={(e) => e.stopPropagation()}
+          />
+
+          <h3>{selectedImage.title}</h3>
+          <p>{selectedImage.category}</p>
+        </div>
+      )}
     </div>
   );
 }

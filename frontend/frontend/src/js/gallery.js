@@ -1,37 +1,8 @@
 export function rungallery() {
 
-  const galleryItems = [
-    {
-      title: "Annual Tech Summit 2024",
-      category: "Events",
-      image: "https://picsum.photos/id/1011/600/400"
-    },
-    {
-      title: "Team Building Activity",
-      category: "Activities",
-      image: "https://picsum.photos/id/1025/600/400"
-    },
-    {
-      title: "Award Ceremony",
-      category: "Achievements",
-      image: "https://picsum.photos/id/1035/600/400"
-    },
-    {
-      title: "Office Workspace",
-      category: "Office",
-      image: "https://picsum.photos/id/1043/600/400"
-    },
-    {
-      title: "Client Appreciation Day",
-      category: "Events",
-      image: "https://picsum.photos/id/1050/600/400"
-    },
-    {
-      title: "Innovation Workshop",
-      category: "Activities",
-      image: "https://picsum.photos/id/1060/600/400"
-    }
-  ];
+  const API_URL = "http://127.0.0.1:8000/api/gallery/";
+
+  let galleryItems = []; // 🔴 static array remove
 
   const grid = document.getElementById("galleryGrid");
   const filterBtns = document.querySelectorAll(".filter-btn");
@@ -42,6 +13,15 @@ export function rungallery() {
   const modalCategory = document.getElementById("modalCategory");
 
   if (!grid || !modal) return; // 🔑 safety for React
+
+  // 🔹 Fetch images from backend
+  fetch(API_URL)
+    .then(res => res.json())
+    .then(data => {
+      galleryItems = data;     // 🔹 DB data
+      renderGallery("All");   // default
+    })
+    .catch(err => console.error("Gallery API Error:", err));
 
   function renderGallery(category) {
     grid.innerHTML = "";
@@ -83,6 +63,7 @@ export function rungallery() {
     }
   });
 
+  // 🔹 existing filter buttons work as-is
   filterBtns.forEach(btn => {
     btn.addEventListener("click", () => {
       document.querySelector(".filter-btn.active")?.classList.remove("active");
@@ -90,6 +71,4 @@ export function rungallery() {
       renderGallery(btn.dataset.category);
     });
   });
-
-  renderGallery("All");
 }

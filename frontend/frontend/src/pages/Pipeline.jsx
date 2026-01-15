@@ -1,6 +1,51 @@
+import { useEffect, useState } from "react";
 import "../css/pipeline.css";
+import { getProjects } from "../services/pipelineApi.js";
 
 function Pipeline() {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    getProjects()
+      .then(setProjects)
+      .catch(console.error);
+  }, []);
+
+  const active = projects.filter(p => p.status === "active");
+  const upcoming = projects.filter(p => p.status === "upcoming");
+  const completed = projects.filter(p => p.status === "completed");
+
+  const renderCard = (p) => (
+    <div key={p.id} className={`project-card ${p.status}-card`}>
+      <div className="card-top">
+        <h3>{p.title}</h3>
+        <span className={`badge ${p.status}`}>
+          {p.status.toUpperCase()}
+        </span>
+      </div>
+
+      <p className="client">{p.client}</p>
+      <p className="desc">{p.description}</p>
+
+      {p.status === "active" && (
+        <div className="progress-box">
+          <div className="progress-text">
+            <span>Progress</span>
+            <span>{p.progress}%</span>
+          </div>
+          <div className="progress-bar">
+            <span style={{ "--progress": `${p.progress}%` }}></span>
+          </div>
+        </div>
+      )}
+
+      <p className="date">
+        <i className="bi bi-calendar"></i>
+        {p.start_date} → {p.end_date}
+      </p>
+    </div>
+  );
+
   return (
     <div className="pipeline-page">
 
@@ -16,156 +61,29 @@ function Pipeline() {
       {/* ACTIVE PROJECTS */}
       <section className="pipeline-section active-section">
         <h2 className="section-title">Active Projects</h2>
-        <p className="section-sub">
-          Currently in progress – delivering excellence every day
-        </p>
-
         <div className="project-grid">
-
-          <div className="project-card active-card">
-            <div className="card-top">
-              <h3>Enterprise Cloud Migration</h3>
-              <span className="badge active">Active</span>
-            </div>
-
-            <p className="client">Fortune 500 Financial Corp</p>
-            <p className="desc">
-              Complete infrastructure migration to AWS with zero downtime strategy.
-            </p>
-
-            <div className="progress-box">
-              <div className="progress-text">
-                <span>Progress</span>
-                <span>75%</span>
-              </div>
-              <div className="progress-bar">
-                <span style={{ "--progress": "75%" }}></span>
-              </div>
-            </div>
-
-            <p className="date">
-              <i className="bi bi-calendar"></i> Jan 2024 → Jun 2024
-            </p>
-          </div>
-
-          <div className="project-card active-card">
-            <div className="card-top">
-              <h3>AI Analytics Platform</h3>
-              <span className="badge active">Active</span>
-            </div>
-
-            <p className="client">Healthcare Solutions Inc</p>
-            <p className="desc">
-              Predictive analytics dashboard for patient care optimization.
-            </p>
-
-            <div className="progress-box">
-              <div className="progress-text">
-                <span>Progress</span>
-                <span>45%</span>
-              </div>
-              <div className="progress-bar">
-                <span style={{ "--progress": "45%" }}></span>
-              </div>
-            </div>
-
-            <p className="date">
-              <i className="bi bi-calendar"></i> Mar 2024 → Sep 2024
-            </p>
-          </div>
-
+          {active.map(renderCard)}
         </div>
       </section>
 
-      {/* UPCOMING PROJECTS */}
+      {/* UPCOMING */}
       <section className="pipeline-section upcoming-section">
         <h2 className="section-title">Upcoming Projects</h2>
-        <p className="section-sub">
-          Planned initiatives scheduled for upcoming execution
-        </p>
-
         <div className="project-grid">
-
-          <div className="project-card upcoming-card">
-            <div className="card-top">
-              <h3>Digital Transformation Suite</h3>
-              <span className="badge upcoming">Upcoming</span>
-            </div>
-
-            <p className="client">Retail Chain Networks</p>
-            <p className="desc">
-              POS, inventory, and enterprise digital modernization project.
-            </p>
-
-            <p className="date">
-              <i className="bi bi-calendar"></i> Jul 2024 → Dec 2024
-            </p>
-          </div>
-
-          <div className="project-card upcoming-card">
-            <div className="card-top">
-              <h3>Cybersecurity Infrastructure</h3>
-              <span className="badge upcoming">Upcoming</span>
-            </div>
-
-            <p className="client">Government Agency</p>
-            <p className="desc">
-              Zero-trust security architecture and compliance framework.
-            </p>
-
-            <p className="date">
-              <i className="bi bi-calendar"></i> Aug 2024 → Feb 2025
-            </p>
-          </div>
-
+          {upcoming.map(renderCard)}
         </div>
       </section>
 
-      {/* COMPLETED PROJECTS */}
+      {/* COMPLETED */}
       <section className="pipeline-section completed-section">
         <h2 className="section-title">Completed Projects</h2>
-        <p className="section-sub">
-          Successfully delivered projects with measurable impact
-        </p>
-
         <div className="project-grid">
-
-          <div className="project-card completed-card">
-            <div className="card-top">
-              <h3>Mobile Banking Application</h3>
-              <span className="badge completed">Completed</span>
-            </div>
-
-            <p className="client">Regional Credit Union</p>
-            <p className="desc">
-              Secure mobile banking app with biometric authentication.
-            </p>
-
-            <p className="date">
-              <i className="bi bi-calendar"></i> Sep 2023 → Feb 2024
-            </p>
-          </div>
-
-          <div className="project-card completed-card">
-            <div className="card-top">
-              <h3>IoT Fleet Management</h3>
-              <span className="badge completed">Completed</span>
-            </div>
-
-            <p className="client">Logistics Partners Ltd</p>
-            <p className="desc">
-              Real-time fleet tracking and route optimization system.
-            </p>
-
-            <p className="date">
-              <i className="bi bi-calendar"></i> Jun 2023 → Dec 2023
-            </p>
-          </div>
-
+          {completed.map(renderCard)}
         </div>
       </section>
 
     </div>
   );
 }
-export default  Pipeline;
+
+export default Pipeline;

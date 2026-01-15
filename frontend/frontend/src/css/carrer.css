@@ -368,6 +368,29 @@ html {
   background-color: #1e40af;
 }
 
+.careers-page .form-success {
+  background: #e6f9f0;
+  color: #0f5132;
+  border: 1px solid #a3e4c2;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.careers-page .form-error {
+  background: #fdecea;
+  color: #842029;
+  border: 1px solid #f5c2c7;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+
+
 /* ================== MEDIA TAGS (RESPONSIVE) ================== */
 @media (max-width: 1024px) {
   .benefits-section, .jobs-section, .apply-section {

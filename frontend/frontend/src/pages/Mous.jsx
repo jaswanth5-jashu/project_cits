@@ -1,24 +1,26 @@
-import { useEffect } from "react";
-import { runMouScript } from "../js/mousScript";
+import React, { useState, useEffect } from "react"; // useState add chesa
 import "../css/mous.css";
 import { NavLink } from "react-router-dom";
+import { getMousApi } from "../services/mousApi.js";
+import { runMouScript } from "../js/mousScript.js";
+import AnimatedNumber from "../components/AnimatedNumbers.jsx";
+
 
 
 function Mous() {
-
   useEffect(() => {
-    runMouScript();   // SCRIPT RUN IKKADA
+    getMousApi()
+      .then(data => {
+        runMouScript(data);
+      })
+      .catch(err => console.error(err));
   }, []);
 
   return (
-    
     <div className="mous-page">
-      {/* ================= HERO ================= */}
       <section className="hero">
         <span className="hero-badge">
-          <span className="badge-icon">
-            <i className="bi bi-people-fill"></i>
-          </span>
+          <span className="badge-icon"><i className="bi bi-people-fill"></i></span>
           Strategic Alliances
         </span>
 
@@ -30,31 +32,25 @@ function Mous() {
 
         <div className="hero-stats">
           <div>
-            <strong>6</strong>
+            <strong><AnimatedNumber end={6} /></strong>
             <span>Active Partnerships</span>
           </div>
           <div>
-            <strong>15+</strong>
+            <strong><AnimatedNumber end={15} />+</strong>
             <span>Countries</span>
           </div>
           <div>
-            <strong>10+</strong>
+            <strong><AnimatedNumber end={10} />+</strong>
             <span>Years of Collaboration</span>
           </div>
         </div>
       </section>
 
       <section className="partnerships">
-
-        {/* SEARCH + FILTER */}
         <div className="top-bar">
           <div className="search-box">
             <i className="bi bi-search"></i>
-            <input
-              type="text"
-              id="searchInput"
-              placeholder="Search partnerships..."
-            />
+            <input type="text" id="searchInput" placeholder="Search partnerships..." />
           </div>
 
           <div className="filters">
@@ -72,19 +68,14 @@ function Mous() {
           <hr className="tophr" />
         </div>
 
-        {/* CARDS */}
         <div className="cards" id="cards"></div>
       </section>
 
-      {/* MODAL */}
-      <div className="modal-overlay" id="mouModal">
+      <div className="modal-overlay" id="mouModal" onClick={(e) => { if(e.target.id === "mouModal") window.closeModal(); }}>
         <div className="modal">
-        <button
-        className="close-btn"
-        onClick={() => window.closeModal()}
-        >
-        &times;
-        </button>
+          <button className="close-btn" onClick={() => window.closeModal()}>
+            &times;
+          </button>
 
           <div className="modal-header">
             <div className="modal-icon">
@@ -111,23 +102,17 @@ function Mous() {
           <hr />
 
           <div className="modal-actions">
+              <a id="viewPdf" target="_blank" rel="noreferrer" className="btn blue">
+                <i className="bi bi-eye"></i> View PDF
+              </a>
 
-            {/* VIEW PDF */}
-            <NavLink id="viewPdf" target="_blank" rel="noreferrer" className="btn blue">
-              <i className="bi bi-eye"></i> View PDF
-            </NavLink>
-
-
-            {/* VIEW MORE */}
-            <NavLink to="/contact" className="btn blue">
-              <i className="bi bi-arrow-right"></i> View More
-            </NavLink>
-
+              <NavLink to="/contact" className="btn blue">
+                <i className="bi bi-arrow-right"></i> View More
+              </NavLink>
           </div>
         </div>
       </div>
 
-      {/* CTA */}
       <section className="partnership-cta">
         <div className="cta-icon">
           <i className="bi bi-people-fill"></i>
@@ -137,17 +122,16 @@ function Mous() {
 
         <p>
           We're always looking for strategic partners who share our vision for
-          innovation and excellence. Let's explore how we can create value together.
+          innovation and excellence.
         </p>
 
         <div className="cta-buttons">
-          <a href="/contact" className="cta-btn primary">
+          <NavLink to="/contact" className="cta-btn primary">
             Contact Us <i className="bi bi-arrow-right"></i>
-          </a>
-
-          <a href="/about" className="cta-btn secondary">
+          </NavLink>
+          <NavLink to="/about" className="cta-btn secondary">
             Learn About Us
-          </a>
+          </NavLink>
         </div>
       </section>
     </div>
