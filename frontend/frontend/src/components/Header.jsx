@@ -14,6 +14,7 @@ function Header() {
           <NavLink to="/pipeline">Pipeline</NavLink>
           <NavLink to="/mous">Mous</NavLink>
           <NavLink to="/gallery">Gallery</NavLink>
+          <NavLink to="/give">Give Back</NavLink>
           <NavLink to="/career">Career</NavLink>
           <NavLink to="/contact">Contact</NavLink>
          

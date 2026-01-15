@@ -1,8 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 import "../css/contact.css";
-
+import { sendContactMessage } from "../services/contactApi";
+import { validateContactForm } from "../utils/contactvalidate.js"; 
 
 function Contact() {
+  const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
+  const [formErrors, setFormErrors] = useState({});
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      subject: formData.get("subject"),
+      message: formData.get("message"),
+    };
+
+    // 🔹 ADDED: VALIDATION
+    const errors = validateContactForm(data);
+    if (Object.keys(errors).length > 0) {
+      setFormErrors(errors);
+      setSuccess("");
+      return;
+    }
+    setFormErrors({});
+
+    try {
+      const res = await sendContactMessage(data);
+
+      setSuccess(
+        res.message ||
+          res.detail ||
+          "Message sent successfully we will contact you with in 24 hours "
+      );
+      setError("");
+      e.target.reset();
+    } catch (err) {
+      setError(
+        err.message ||
+          err.detail ||
+          "Failed to send message. Please try again."
+      );
+      setSuccess("");
+    }
+  };
+
   return (
     <div className="cont-page">
       {/* HERO SECTION */}
@@ -24,8 +71,11 @@ function Contact() {
             Fill out the form and our team will get back to you within 24 hours.
           </p>
 
+          {success && <div className="form-success">{success}</div>}
+          {error && <div className="form-error">{error}</div>}
+
           <div className="contact-grid">
-            {/* LEFT : CONTACT INFO */}
+            {/* LEFT INFO */}
             <div className="contact-info">
               <div className="info-card">
                 <i className="bi bi-envelope"></i>
@@ -60,23 +110,46 @@ function Contact() {
               </div>
             </div>
 
-            {/* RIGHT : CONTACT FORM */}
+            {/* RIGHT FORM */}
             <div className="contact-form">
-              <form>
+              <form onSubmit={handleSubmit} noValidate>
                 <div className="form-group">
-                  <input type="text" placeholder="Your Name" required />
+                  <input type="text" name="name" placeholder="Your Name" />
+                  {formErrors.name && (
+                    <small className="error">{formErrors.name}</small>
+                  )}
                 </div>
 
                 <div className="form-group">
-                  <input type="email" placeholder="Your Email" required />
+                  <input type="email" name="email" placeholder="Your Email" />
+                  {formErrors.email && (
+                    <small className="error">{formErrors.email}</small>
+                  )}
                 </div>
 
                 <div className="form-group">
-                  <input type="text" placeholder="Subject" />
+                  <input type="tel" name="phone" placeholder="Phone Number" />
+                  {formErrors.phone && (
+                    <small className="error">{formErrors.phone}</small>
+                  )}
                 </div>
 
                 <div className="form-group">
-                  <textarea placeholder="Your Message" rows="5"></textarea>
+                  <input type="text" name="subject" placeholder="Subject" />
+                  {formErrors.subject && (
+                    <small className="error">{formErrors.subject}</small>
+                  )}
+                </div>
+
+                <div className="form-group">
+                  <textarea
+                    name="message"
+                    placeholder="Your Message"
+                    rows="5"
+                  ></textarea>
+                  {formErrors.message && (
+                    <small className="error">{formErrors.message}</small>
+                  )}
                 </div>
 
                 <button type="submit" className="btn">

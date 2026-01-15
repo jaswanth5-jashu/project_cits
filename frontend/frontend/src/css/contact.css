@@ -138,6 +138,33 @@ html {
     line-height: 1.5;
 }
 
+.cont-page .form-success {
+  margin-bottom: 16px;
+  padding: 12px;
+  background: #e7f7ed;
+  color: #1e7e34;
+  border-left: 4px solid #28a745;
+  border-radius: 4px;
+}
+
+.cont-page .form-error {
+  margin-bottom: 16px;
+  padding: 12px;
+  background: #fdecea;
+  color: #b02a37;
+  border-left: 4px solid #dc3545;
+  border-radius: 4px;
+}
+
+.cont-page .error {
+  color: #e63946;
+  font-size: 13px;
+  margin-top: 4px;
+  display: block;
+}
+
+
+
 /* ================== HEADQUARTERS DESIGN (BLUE BORDER) ================== */
 .cont-page .headquarters {
     border: 2px solid #2563eb; /* Full Blue Border */

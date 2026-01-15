@@ -1,8 +1,9 @@
 
 import About from "../pages/About";
 import Career from "../pages/Carrer";
-import Contact from "../pages/Contact"
+import Contact from "../pages/Contact";
 import Gallery from "../pages/Gallery";
+import GiveBackPage from "../pages/Give.jsx";
 import Mous from "../pages/Mous";
 import Pipeline from "../pages/Pipeline.jsx";
 import Home from "../pages/Home";
@@ -22,6 +23,7 @@ function Approutes(){
             <Route path="/pipeline" element={<Pipeline />} />
             <Route path="/mous" element={<Mous />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/give" element={<GiveBackPage />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/career" element={<Career />} />
             <Route path="/linkedin" element={<LinkedInRedirect />} />

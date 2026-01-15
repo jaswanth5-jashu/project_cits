@@ -1,5 +1,6 @@
-
+import React, { useState, useEffect } from "react";
 import "../css/About.css";
+import AnimatedNumber from "../components/AnimatedNumbers.jsx";
 
 function About() {
   return (
@@ -47,22 +48,22 @@ function About() {
 
         <div className="st-r">
           <div className="box b1">
-            <h3>15+</h3>
+            <h3><AnimatedNumber end={15} />+</h3>
             <span>Years Experience</span>
           </div>
 
           <div className="box">
-            <h3>500+</h3>
+            <h3><AnimatedNumber end={500} />+</h3>
             <span>Clients Served</span>
           </div>
 
           <div className="box">
-            <h3>50+</h3>
+            <h3><AnimatedNumber end={50} />+</h3>
             <span>Tech Experts</span>
           </div>
 
           <div className="box b2">
-            <h3>10+</h3>
+            <h3><AnimatedNumber end={10} />+</h3>
             <span>Countries</span>
           </div>
         </div>
