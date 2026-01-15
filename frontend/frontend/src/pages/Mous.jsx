@@ -5,7 +5,6 @@ import { getMousApi } from "../services/mousApi.js";
 import { runMouScript } from "../js/mousScript.js";
 import AnimatedNumber from "../components/AnimatedNumbers.jsx";
 
-
 function Mous() {
   useEffect(() => {
     getMousApi()
