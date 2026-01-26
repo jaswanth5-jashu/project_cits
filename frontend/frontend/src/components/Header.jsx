@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import '../css/Header.css';
 function Header() {
   return (
+    <div className="par">
     <header className="header">
       <div className="container">
         <div className="logo">
@@ -11,7 +12,14 @@ function Header() {
           <NavLink to="/">Home</NavLink>
           <NavLink to="/about">About Us</NavLink>
           <NavLink to="/services">Services</NavLink>
-          <NavLink to="/pipeline">Pipeline</NavLink>
+          <div className="dropdown">
+            <span className="dropdown-title">Pipeline ▾</span>
+
+            <div className="dropdown-menu">
+              <NavLink to="/pipeline">Pipeline</NavLink>
+              <NavLink to="/cpus">CPUs</NavLink>
+            </div>
+          </div>
           <NavLink to="/mous">Mous</NavLink>
           <NavLink to="/gallery">Gallery</NavLink>
           <NavLink to="/give">Give Back</NavLink>
@@ -25,6 +33,7 @@ function Header() {
         </div>
         </div>
       </header>
+      </div>
   );
 }
 

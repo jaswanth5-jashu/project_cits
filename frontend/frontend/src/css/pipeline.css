@@ -152,40 +152,64 @@
   gap: 8px;
 }
 
-/* ================= PROGRESS ================= */
-.pipeline-page .progress-box {
-  margin: 18px 0;
-}
+/* ================= PROGRESS GRAPH ================= */
 
-.pipeline-page .progress-text {
+.pipeline-page .progress-graph {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+/* Step box */
+.pipeline-page .graph-step {
+  flex: 1;
+  text-align: center;
+  padding: 10px 6px;
   font-size: 13px;
-  margin-bottom: 6px;
-}
-
-.pipeline-page .progress-bar {
-  height: 9px;
+  font-weight: 600;
+  border-radius: 18px;
   background: #e5e7eb;
-  border-radius: 999px;
-  overflow: hidden;
+  color: #6b7280;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
-.pipeline-page .progress-bar span {
-  display: block;
-  height: 100%;
-  width: var(--progress); /* React inline style compatible */
+/* Completed step */
+.pipeline-page .graph-step.completed {
   background: #22c55e;
-  animation: fill 1.1s ease;
+  color: #ffffff;
 }
 
-/* ================= ANIMATION ================= */
-@keyframes fill {
-  from {
-    width: 0;
+/* Active step */
+.pipeline-page .graph-step.active {
+  background: #2563eb;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* Connector */
+.pipeline-page .graph-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -12px;
+  width: 12px;
+  height: 3px;
+  background: #d1d5db;
+  transform: translateY(-50%);
+}
+
+/* ================= MOBILE VIEW ================= */
+@media (max-width: 640px) {
+  .pipeline-page .progress-graph {
+    flex-direction: column;
+    gap: 10px;
   }
-  to {
-    width: var(--progress);
+
+  .pipeline-page .graph-step::after {
+    display: none;
   }
 }
 
