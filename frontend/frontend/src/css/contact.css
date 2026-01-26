@@ -1,5 +1,5 @@
 /* ================== GLOBAL & SMOOTH SCROLL ================== */
-.cps html {
+html {
     scroll-behavior: smooth;
 }
 
@@ -8,12 +8,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-.cps .cont-page {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-    overflow-x: hidden;
-    background-color: #f8fafc;
 }
 
 /* ================== KEYFRAMES ================== */
@@ -73,7 +68,6 @@
 .cps .cont-page .container {
     max-width: 1200px;
     margin: auto;
-    display: block;
 }
 
 .cps .cont-page .section-title {
@@ -81,14 +75,12 @@
     font-size: 36px;
     margin-bottom: 10px;
     color: #1e293b;
-    width: 100%;
 }
 
 .cps .cont-page .section-subtitle {
     text-align: center;
     color: #64748b;
     margin-bottom: 50px;
-    width: 100%;
 }
 
 .cps .cont-page .contact-grid {
@@ -139,6 +131,7 @@
     line-height: 1.5;
 }
 
+/* SUCCESS & ERROR MESSAGES */
 .cps .cont-page .form-success {
     margin-bottom: 16px;
     padding: 12px;
@@ -164,7 +157,59 @@
     display: block;
 }
 
-/* ================== HEADQUARTERS ================== */
+/* ================== FORM STYLING ================== */
+.cps .cont-page .contact-form {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.cps .cont-page .contact-form .form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cps .cont-page .contact-form input,
+.cps .cont-page .contact-form textarea {
+    padding: 12px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    outline: none;
+    transition: 0.3s;
+}
+
+.cps .cont-page .contact-form input:focus,
+.cps .cont-page .contact-form textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* BUTTON */
+.cps .cont-page .contact-form .btn {
+    background: #2563eb;
+    color: #fff;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.cps .cont-page .contact-form .btn:hover {
+    background: #0a52c1;
+    transform: translateY(-2px);
+}
+
+/* HEADQUARTERS CARD */
 .cps .cont-page .headquarters {
     border: 2px solid #2563eb;
     background-color: #ffffff;
@@ -175,6 +220,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
+}
+
+.cps .cont-page .direction-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.cps .cont-page .direction-btn:hover {
+    text-decoration: underline;
 }
 
 /* ================== RESPONSIVE ================== */
@@ -192,5 +252,13 @@
 @media (max-width: 600px) {
     .cps .cont-page .contact-form {
         padding: 25px;
+    }
+
+    .cps .cont-page .hero-con h1 {
+        font-size: 32px;
+    }
+
+    .cps .cont-page .hero-con p {
+        font-size: 16px;
     }
 }
