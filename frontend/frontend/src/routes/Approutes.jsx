@@ -12,6 +12,7 @@ import { Route,Routes } from "react-router-dom";
 import LinkedInRedirect from "../pages/LinkedInRedirect";
 import TwitterRedirect from "../pages/TwitterRedirect";
 import FacebookRedirect from "../pages/FacebookRedirect";
+import Cpus from "../pages/CPUs.jsx";
 
 
 function Approutes(){
@@ -29,6 +30,7 @@ function Approutes(){
             <Route path="/linkedin" element={<LinkedInRedirect />} />
             <Route path="/twitter" element={<TwitterRedirect />} />
             <Route path="/facebook" element={<FacebookRedirect />} />
+            <Route path="/cpus" element={<Cpus/>} />
 
             
 

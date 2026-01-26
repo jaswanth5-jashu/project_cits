@@ -9,7 +9,7 @@ const Services = () => {
         <div className="hero-c">
           <h1>Our Services</h1>
           <p>
-            Comprehensive technology solutions designed to accelerate your <br />
+            Comprehensive technology solutions designed to accelerate your 
             digital transformation and drive business success.
           </p>
         </div>

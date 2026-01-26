@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "../css/pipeline.css";
 import { getProjects } from "../services/pipelineApi.js";
+import HillGraph from "../components/HillGraph.jsx";
 
 function Pipeline() {
   const [projects, setProjects] = useState([]);
@@ -27,16 +28,9 @@ function Pipeline() {
       <p className="client">{p.client}</p>
       <p className="desc">{p.description}</p>
 
+      {/* ✅ HILL GRAPH FOR ACTIVE PROJECTS */}
       {p.status === "active" && (
-        <div className="progress-box">
-          <div className="progress-text">
-            <span>Progress</span>
-            <span>{p.progress}%</span>
-          </div>
-          <div className="progress-bar">
-            <span style={{ "--progress": `${p.progress}%` }}></span>
-          </div>
-        </div>
+        <HillGraph progress={p.progress} />
       )}
 
       <p className="date">
@@ -49,7 +43,6 @@ function Pipeline() {
   return (
     <div className="pipeline-page">
 
-      {/* TOP HEADER */}
       <section className="pipeline-header">
         <h1>Project Pipeline</h1>
         <p>
@@ -58,7 +51,6 @@ function Pipeline() {
         </p>
       </section>
 
-      {/* ACTIVE PROJECTS */}
       <section className="pipeline-section active-section">
         <h2 className="section-title">Active Projects</h2>
         <div className="project-grid">
@@ -66,7 +58,6 @@ function Pipeline() {
         </div>
       </section>
 
-      {/* UPCOMING */}
       <section className="pipeline-section upcoming-section">
         <h2 className="section-title">Upcoming Projects</h2>
         <div className="project-grid">
@@ -74,7 +65,6 @@ function Pipeline() {
         </div>
       </section>
 
-      {/* COMPLETED */}
       <section className="pipeline-section completed-section">
         <h2 className="section-title">Completed Projects</h2>
         <div className="project-grid">

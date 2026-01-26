@@ -10,7 +10,6 @@ function About() {
           <h1>Akhil Cloud Tecnologies Plarfrom LLP</h1>
           <p>
             Building tomorrow's technology solutions today. Learn about our{" "}
-            <br />
             journey, mission, and the values that drive us forward.
           </p>
         </div>
@@ -34,7 +33,7 @@ function About() {
           </p>
 
           <p>
-            Over the past 15 years, we have evolved from a small IT consulting
+            Over the past 3 years, we have evolved from a small IT consulting
             firm to a global technology partner trusted by Fortune 500 companies
             and innovative startups alike.
           </p>
@@ -48,7 +47,7 @@ function About() {
 
         <div className="st-r">
           <div className="box b1">
-            <h3><AnimatedNumber end={15} />+</h3>
+            <h3><AnimatedNumber end={3} />+</h3>
             <span>Years Experience</span>
           </div>
 
@@ -168,7 +167,7 @@ function About() {
         <div className="tl-wrap">
           <div className="tl-item left">
             <div className="card">
-              <span className="yr">2009</span>
+              <span className="yr">20</span>
               <h4>Company Founded</h4>
               <p>Started with a vision to transform IT services.</p>
             </div>

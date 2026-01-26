@@ -51,6 +51,7 @@ function Contact() {
   };
 
   return (
+    <div className="cps">
     <div className="cont-page">
       {/* HERO SECTION */}
       <section className="hero-contact">
@@ -184,6 +185,7 @@ function Contact() {
           </a>
         </div>
       </div>
+    </div>
     </div>
   );
 }

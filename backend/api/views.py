@@ -25,7 +25,7 @@ class ContactMessageCreate(APIView):
         if serializer.is_valid():
             contact = serializer.save()
 
-            # 📧 Send mail to admin
+            # Send mail to admin
             send_mail(
                 subject=f"New Contact: {contact.subject}",
                 message=f"""
