@@ -27,7 +27,7 @@ class ContactMessage(models.Model):
     def __str__(self):
         return f"{self.name} - {self.email}"
     
-    #mous
+   
 def mou_upload_path(instance, filename):
     return f"mous/{instance.category}/{filename}"
 
