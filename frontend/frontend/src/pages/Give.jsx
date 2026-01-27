@@ -72,13 +72,6 @@ function GiveBackPage() {
 
           <div className="stat-card">
             <h2>
-              <AnimatedNumber end={75} />
-            </h2>
-            <p>Scholarships Given</p>
-          </div>
-
-          <div className="stat-card">
-            <h2>
               <AnimatedNumber end={25} />
             </h2>
             <p>Partner Institutions</p>

@@ -2,19 +2,19 @@
 __pycache__/
 *.pyc
 
-# Virtual environment (if any)
+# Virtual environment
 venv/
 env/
 
 # OS files
 .DS_Store
 
-# Python cache
-__pycache__/
-*.pyc
-
 # Environment files
 .env
 
-# SQLite DB
+# Database
 db.sqlite3
+
+# Media files (optional, if you want to stop tracking uploads)
+# backend/media/
+
